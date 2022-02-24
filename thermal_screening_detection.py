@@ -102,7 +102,20 @@ def main():
         out.write(video_frames[i])
     out.release()
 
+    # img = cv2.imread(str(base_dir + 'input_image.jpg))
     #
+    # process the image 
+    processed_img = process_frame(img)
+    height, width, _ = processed_img.shape
+    dim = (int(width * 0.5), int(height * 0.5))
+    #
+    # resize_img = cv2.resize(processed_img, dim, interpilation=cv2.INTER_AREA)
+    # cv2.imwrite(str(base_dir + 'output_image.jpg), resize_img)
+    #
+    # saved_img = cv2.imread(str(base_dir + 'ouput_image.jpg'))
+    # cv2.imshow('output', saved_img)
+    #
+    # cv2.waitKey(0)
 
 if __name__ == "__main__":
     main()
